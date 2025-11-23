@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path');
-const port = 3000
+
 
 const http = require('http');
 const server = http.createServer(app);
@@ -25,6 +25,7 @@ app.get(/(.*)/, (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
