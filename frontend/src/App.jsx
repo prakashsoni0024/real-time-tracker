@@ -19,7 +19,7 @@ function App() {
 
     useEffect(() => {
         // Initialize Socket
-        socketRef.current = io();
+        socketRef.current = io("https://real-time-tracker-1-l36j.onrender.com");
 
         // Initialize Map
         if (!mapRef.current) {
