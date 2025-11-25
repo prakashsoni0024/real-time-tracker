@@ -11,8 +11,8 @@ const io = socketio(server);
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 io.on("connection", (socket) => {
-  socket.on("send-location", (data) => {
-    io.emit("receive-location", { id: socket.id, ...data });
+  socket.on("send-location", (data) => { // Receive location from client
+    io.emit("receive-location", { id: socket.id, ...data }); // Broadcast to all clients
   });
   console.log("Connected");
   socket.on("disconnect", (data) => {

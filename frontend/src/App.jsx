@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-let DefaultIcon = L.icon({
+let DefaultIcon = L.icon({ 
     iconUrl: '/images/marker-icon.png',
     shadowUrl: '/images/marker-shadow.png',
     iconSize: [25, 41],
@@ -13,9 +13,9 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 function App() {
-    const mapRef = useRef(null);
-    const markersRef = useRef({});
-    const socketRef = useRef(null);
+    const mapRef = useRef(null); 
+    const markersRef = useRef({}); 
+    const socketRef = useRef(null); 
 
     useEffect(() => {
         // Initialize Socket
@@ -39,7 +39,7 @@ function App() {
             navigator.geolocation.watchPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    socket.emit("send-location", { latitude, longitude });
+                    socket.emit("send-location", { latitude, longitude }); // Send location to server
                     if (mapRef.current) {
                         mapRef.current.setView([latitude, longitude]);
                     }
