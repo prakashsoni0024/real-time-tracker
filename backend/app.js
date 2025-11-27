@@ -8,7 +8,6 @@ const server = http.createServer(app);
 const socketio = require("socket.io");
 const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 io.on("connection", (socket) => {
   socket.on("send-location", (data) => { // Receive location from client
@@ -19,10 +18,6 @@ io.on("connection", (socket) => {
     io.emit("user-disconnected", socket.id);
     console.log("Disconnected");
   });
-});
-
-app.get(/(.*)/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
 const port = process.env.PORT || 3000;
