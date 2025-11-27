@@ -7,9 +7,9 @@ import 'leaflet/dist/leaflet.css';
 
 const DefaultIcon = L.icon({
   iconUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+    "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/images/markers-plain.png",
   shadowUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/images/markers-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
 });
