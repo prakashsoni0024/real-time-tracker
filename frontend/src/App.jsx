@@ -2,10 +2,12 @@ import { useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import markerIcon from './assets/marker-icon.png';
+import markerShadow from './assets/marker-shadow.png';
 
-let DefaultIcon = L.icon({ 
-    iconUrl: '/images/marker-icon.png',
-    shadowUrl: '/images/marker-shadow.png',
+let DefaultIcon = L.icon({
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow,
     iconSize: [25, 41],
     iconAnchor: [12, 41]
 });
