@@ -6,7 +6,12 @@ const path = require('path');
 const http = require('http');
 const server = http.createServer(app);
 const socketio = require("socket.io");
-const io = socketio(server);
+const io = socketio(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 
 
 io.on("connection", (socket) => {
